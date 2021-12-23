@@ -31,7 +31,7 @@ function App() {
           id="query"
           type="text"
           onChange={updateQuery}
-          placeholder="Search"
+          placeholder="Type to search"
         />
         <button onClick={search} type="submit">
           Search
