@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  flex: 0 0 70%;
+  max-width: 100%;
 }
 
 .App-logo {
@@ -37,16 +39,33 @@
   }
 }
 .form {
+  display: flex;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: yellow;
   padding: 10px;
   font-size: 20px;
 }
 .form input {
-  padding: 5px;
+  display: block;
+  margin: 10px;
+  margin-top: 5px;
+  padding: 15px 20px 10px 20px;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--inputFontSize);
+  font-weight: inherit;
+  line-height: var(--inputLineHeight);
+  border: none;
+  border-radius: 0.4rem;
+  transition: box-shadow var(--transitionDuration);
 }
+.form input:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+}
+
 .form button {
   padding: 5px;
 }
