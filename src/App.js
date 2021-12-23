@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 
 const getImages = async (query) => {
@@ -14,14 +14,23 @@ const getImages = async (query) => {
 function App() {
   const [query, setQuery] = useState("");
   const [images, setImages] = useState([]);
+  const typingTimeoutRef = useRef(null);
 
-  const search = async () => {
-    const res = await getImages(query);
+  const search = async (key) => {
+    const res = await getImages(key);
     setImages(res);
   };
 
   const updateQuery = (e) => {
     setQuery(e.target.value);
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current);
+    }
+    typingTimeoutRef.current = setTimeout(() => {
+      const searchTerm = e.target.value;
+      search(searchTerm);
+      console.log(searchTerm);
+    }, 800);
   };
 
   return (
@@ -30,14 +39,12 @@ function App() {
         <input
           id="query"
           type="text"
+          value={query}
           onChange={updateQuery}
-          placeholder="Search"
+          placeholder="Type to search"
         />
-        <button onClick={search} type="submit">
-          Search
-        </button>
       </div>
-      <div className='flex'>
+      <div className="flex">
         {images.map((image) => (
           <a key={image.id} href={image.link}>
             <img alt={image.description} src={image.image} />
