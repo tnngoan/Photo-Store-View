@@ -13,6 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * Search executes 0.8sec after user stop tying
 
+* User's search history is saved in localStorage
 
 ## Available Scripts
 
