@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+.form {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 10px;
+  font-size: 20px;
+}
+.form input {
+  padding: 5px;
+}
+.form button {
+  padding: 5px;
+}
+.flex {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 4px;
+  -moz-column-count: 3;
+  -moz-column-gap: 4px;
+  column-count: 3;
+  column-gap: 4px;
+}
+.flex a img {
+  width: 100% !important;
+  height: auto !important;
+}
