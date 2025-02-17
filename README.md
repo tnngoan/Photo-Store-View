@@ -1,7 +1,12 @@
+# Idea: Find beautiful photos and turn them into art.
+
+* Find your favorite photo by entering a keyword and turn them into Paint by Number painting
+* or Upload your own photo and make it a Paint by Number painting
+* Shop the whole kit on the website
+
 # Search for images with a keyword
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 
 ## Main Features:
 
